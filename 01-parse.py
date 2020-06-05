@@ -38,7 +38,6 @@ else:
             for x in layout:
                 if isinstance(x, LTTextBoxHorizontal):
                     results = x.get_text()
-                    results = ''.join(i.strip() for i in results.splitlines())
                     fw.write(results)
                     fw.write('\n')
                 elif isinstance(x, LTFigure):
