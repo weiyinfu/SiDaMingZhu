@@ -49,6 +49,7 @@ def get_parts(content: str):
 
 def merge_lines(s: str):
     # s是一个章回
+    s = s.strip()
     lines = [i.strip() for i in s.splitlines()]
     ans = [lines[0]]
     last_end = True
@@ -58,7 +59,7 @@ def merge_lines(s: str):
         else:
             ans[-1] += i
         if i:
-            if i[-1] in "：。！":
+            if i[-1] in "：。！？":
                 last_end = True
             else:
                 last_end = False
